@@ -1,6 +1,7 @@
 # IMPORTS
 import pygame
 import random
+import os
 
 # SET DISPLAY
 pygame.init()
@@ -70,7 +71,7 @@ def gameloop():
         pygame.draw.circle(display, WHITE, ( display_width // 2, display_height // 2), 30)
         pygame.draw.circle(display, GRASS, ( display_width // 2, display_height // 2), 20)
         pygame.draw.line(display, WHITE,(display_width // 2, 0), (display_width // 2, display_height), 10)
-        ball = pygame.image.load("assets/ball.png")
+        ball = pygame.image.load(os.path.join("assets", "ball.png"))
         ball = pygame.transform.scale(ball, (BALL_RADIUS, BALL_RADIUS))
         display.blit(ball, (XBALL, YBALL))
         
